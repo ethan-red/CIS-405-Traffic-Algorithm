@@ -26,6 +26,6 @@ struct SimStats{
         }
         return total_wait/cars_passed;
     }
-}
+};
 
-SimStats run_simulation(Controller& ctrl, const SimConfig& config, bool trace = false);
+SimStats simulation(Controller& ctrl, const SimConfig& config, bool trace = false);

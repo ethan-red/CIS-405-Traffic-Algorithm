@@ -1,11 +1,12 @@
 #include <string>
 using namespace std;
 
-enum class Phase{
+enum class Phase{ //Phases for each direction
     NS_GREEN, NS_YELLOW, NS_RED,
     EW_GREEN, EW_YELLOW, EW_RED
 };
 
+//Checks if a direction is in a specific state
 bool is_green(Phase p){
     return p == Phase::NS_GREEN || p == Phase::EW_GREEN;
 }
@@ -26,6 +27,7 @@ struct IntersectionState{
     double ew_red_time = 0.0;
 };
 
+//Virtual controller class - inherited by the two controllers
 class Controller{
     virtual ~Controller() = default;
     virtual Phase update(const IntersectionState& state, double num);
