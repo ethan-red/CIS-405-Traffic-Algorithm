@@ -28,4 +28,4 @@ struct SimStats{
     }
 };
 
-SimStats simulation(Controller& ctrl, const SimConfig& config, bool trace = false);
+SimStats run_simulation(Controller& ctrl, const SimConfig& config, bool trace = false);
