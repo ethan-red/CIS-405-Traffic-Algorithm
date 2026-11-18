@@ -5,7 +5,6 @@ using namespace std;
 
 int main(){
     SimConfig base;
-    base.duration = 600.0; //10 simulated minutes
 
     Controller traffic_light;
 
@@ -15,12 +14,12 @@ int main(){
     };
 
     Scenario scenarios[] = {
-        {"Balanced", 1.5, 1.5},
-        {"NS-Heavy", 2.0, 0.5},
-        {"EW-Heavy", 0.5, 2.0}
+        {"Balanced", 0.5, 0.5},
+        {"NS-Heavy", 1.0, 0.3},
+        {"EW-Heavy", 0.3, 1.0}
     };
 
-    printf("%-10s %8s %8s %8s %8s\n", "scenario", "served", "avg_wait",
+    printf("%-10s %8s %8s %8s %8s\n", "scenario", "passed", "avg_wait",
             "max_wait", "switches\n");
     for(auto& sc : scenarios){
         base.ns_arrival_rate = sc.ns;

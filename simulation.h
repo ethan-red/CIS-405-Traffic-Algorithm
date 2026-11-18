@@ -3,14 +3,13 @@
 #include <string>
 
 struct SimConfig{
-    double ns_arrival_rate = 0.25;
-    double ew_arrival_rate = 0.25;
+    double ns_arrival_rate = 0.25; //Default NS arrival rate
+    double ew_arrival_rate = 0.25; //Default EW arrival rate
     double num = 0.1;
-    double duration = 600.0;
-    double yellow_time = 5.0;
-    double all_red_time = 2.0;
-    int discharge_rate = 1;
-    int near_intersection = 6;
+    double duration = 600.0; //10 simulated minutes
+    double yellow_time = 5.0; //Light is yellow for 5 simulated seconds
+    double all_red_time = 2.0; //Both lights are red for 2 simulated seconds
+    int discharge_rate = 3; //How fast the intersection 
 };
 
 struct SimStats{
@@ -18,13 +17,13 @@ struct SimStats{
     long long cars_passed = 0;
     double total_wait = 0.0;
     double max_wait = 0.0;
-    int switches = 0;
+    int switches = 0; //How many phase switches the traffic light makes
     double total_time = 0.0;
-    double avg_wait() const{
-        if(cars_passed == 0){
+    double avg_wait() {
+        if(cars_arrived == 0){
             return 0.0;
         }
-        return total_wait/cars_passed;
+        return total_wait/cars_arrived;
     }
 };
 
