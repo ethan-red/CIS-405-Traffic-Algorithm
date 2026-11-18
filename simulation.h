@@ -1,4 +1,6 @@
+#pragma once
 #include "controller.h"
+#include <string>
 
 struct SimConfig{
     double ns_arrival_rate = 0.25;
@@ -9,8 +11,6 @@ struct SimConfig{
     double all_red_time = 2.0;
     int discharge_rate = 1;
     int near_intersection = 6;
-
-    unsigned seed = 42;
 };
 
 struct SimStats{
@@ -28,4 +28,4 @@ struct SimStats{
     }
 };
 
-SimStats run_simulation(Controller& ctrl, const SimConfig& config, bool trace = false);
+SimStats run_simulation(Controller& ctrl, const SimConfig& config);
