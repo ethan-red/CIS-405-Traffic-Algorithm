@@ -81,7 +81,7 @@ SimStats run_simulation(Controller& ctrl, const SimConfig& config){
         s.ns_red_time = ns_red;
         s.ew_red_time = ew_red;
 
-        Phase requested = ctrl.update(s, config.num);
+        Phase requested = ctrl.update(s);
 
         if(is_green(s.phase) && is_yellow(requested)){
             s.phase = requested;
@@ -97,7 +97,7 @@ SimStats run_simulation(Controller& ctrl, const SimConfig& config){
             phase_time = 0.0;
         }
 
-        if(tick % 600 == 0){ //Outputs every simulated minute with a "screenshot" of the intersection
+        if(tick % config.print_rate == 0){ //Outputs every simulated minute with a "screenshot" of the intersection
             printf("time=%6.1f phase=%d NS_q=%2zu EW_q=%2zu passed=%4lld avg_wait=%6.2f\n",
                time, static_cast<int>(s.phase), ns_q.size(), ew_q.size(),
                stats.cars_passed, stats.avg_wait());

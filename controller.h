@@ -30,7 +30,7 @@ struct IntersectionState{
 
 class Controller {
 public:
-    Phase update(const IntersectionState& state, double num);
+    Phase update(const IntersectionState& state);
 
     static constexpr double SWITCH_RATIO   = 1.3;
     static constexpr int    MIN_SWITCH_CARS = 2;

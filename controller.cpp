@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Phase Controller::update(const IntersectionState& state, double) {
+Phase Controller::update(const IntersectionState& state) {
     if (!is_green(state.phase)) return state.phase;
     bool ns_green = (state.phase == Phase::NS_GREEN);
     int current_queue = ns_green ? state.ns_queue : state.ew_queue;

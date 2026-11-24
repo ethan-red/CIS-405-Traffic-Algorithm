@@ -16,7 +16,9 @@ int main(){
     Scenario scenarios[] = {
         {"Balanced", 0.5, 0.5},
         {"NS-Heavy", 1.0, 0.3},
-        {"EW-Heavy", 0.3, 1.0}
+        {"EW-Heavy", 0.3, 1.0},
+        {"Heavy-Traffic", 0.8, 0.8},
+        {"Light-Traffic", 0.2, 0.2}
     };
 
     printf("%-10s %8s %8s %8s %8s\n", "scenario", "passed", "avg_wait",

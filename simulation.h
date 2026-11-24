@@ -9,7 +9,8 @@ struct SimConfig{
     double duration = 600.0; //10 simulated minutes
     double yellow_time = 5.0; //Light is yellow for 5 simulated seconds
     double all_red_time = 2.0; //Both lights are red for 2 simulated seconds
-    int discharge_rate = 3; //How fast the intersection 
+    int print_rate = 600.0; //How many ticks between stat outputs (tick = 0.1 sec)
+    int discharge_rate = 3; //How fast the intersection discharges vehicles (3 per 0.1 sec)
 };
 
 struct SimStats{
